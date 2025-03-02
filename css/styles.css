@@ -121,6 +121,7 @@ img {
 
 .section {
   padding: 120px 0;
+  margin: 0 auto;
 }
 
 .main-btn {
@@ -164,7 +165,7 @@ img {
 }
 
 .social-link-icon {
-  fill: var(--text-light-color);
+  fill: var(--text-light-secondary-color);
 }
 
 .logo {
@@ -184,6 +185,7 @@ img {
 /* header styles */
 .header {
   border-bottom: 1px solid var(--border-color-1);
+  box-shadow: var(--card-box-shadow);
 }
 
 .header .container {
@@ -214,6 +216,10 @@ img {
   position: relative;
 }
 
+.nav-link.active {
+  color: var(--hover-color);
+}
+
 .nav-link::after {
   content: "";
   display: block;
@@ -228,7 +234,8 @@ img {
 }
 
 .nav-link:hover::after,
-.nav-link:focus::after {
+.nav-link:focus::after,
+.nav-link.active::after {
   background-color: var(--hover-color);
 }
 
@@ -244,8 +251,12 @@ img {
 /* section 1 styles */
 
 .first-section {
+  max-width: 1440px;
   background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
-    url("../images/main-bg.jpg") no-repeat center center / cover;
+    url("../images/main-bg.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
   color: var(--text-light-color);
   padding: 188px 0;
 }
@@ -344,9 +355,9 @@ img {
 
 .team-member-social-links {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  gap: 4px;
+  gap: 24px;
   margin: 0 16px;
 }
 
@@ -391,6 +402,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
+  color: var(--text-light-secondary-color);
   padding: 40px 32px;
   background-color: var(--accent-color);
   transition: var(--transform-transition);
@@ -399,10 +411,6 @@ img {
 
 .portfolio-item:hover .portfolio-item-overlay {
   transform: translateY(0);
-}
-
-.overlay-text {
-  color: var(--text-light-secondary-color);
 }
 
 .portfolio-item-content {
@@ -428,6 +436,7 @@ img {
 
 .footer .container {
   display: flex;
+  align-items: baseline;
 }
 
 .footer .logo {
@@ -444,11 +453,15 @@ img {
   max-width: 264px;
 }
 
+.footer-logo-container {
+  margin-right: 120px;
+}
+
 .footer-social-block {
-  margin-left: 120px;
 }
 
 .footer-social-title {
+  font-weight: 500;
   color: var(--text-light-color);
   margin-bottom: 16px;
   font-size: var(--body-text-size);
@@ -457,4 +470,9 @@ img {
 .footer-social-links {
   display: flex;
   gap: 16px;
+}
+
+.footer-social-links .social-link:hover,
+.footer-social-links .social-link:focus {
+  background-color: #31d0aa;
 }
